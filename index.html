@@ -7,7 +7,22 @@
     <meta name="description" content="Exclusive content by AmmyXO - Subscribe to my OnlyFans">
     <title>AmmyXO - Exclusive Content</title>
     <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
-    <style>
+    <script>
+        // Replace 'YOUR_API_KEY' with your actual API key from ipapi or ipstack
+        fetch('https://api.ipapi.com/api/check?access_key=1a4e4257e5cf197350e90a89b4d0c0c8')
+            .then(response => response.json())
+            .then(data => {
+                if (data.country_code === "RO") { // RO is the country code for Romania
+                    document.body.innerHTML = `
+                        <h1>Access Denied</h1>
+                        <p>This page is not available in your region.</p>
+                    `;
+                }
+            })
+            .catch(error => console.error('Geolocation API error:', error));
+    </script>
+
+	<style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
